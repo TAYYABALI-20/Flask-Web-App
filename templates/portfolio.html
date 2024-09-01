@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Navbar with Container</title>
+    <style>
+      /* CSS Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+      }
+      
+      /* Body Styling */
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+        overflow-x: hidden;
+      }
+      
+      /* Navbar Styling */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: #333;
+        color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Logo */
+      .nav-logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      
+      .nav-logo:hover {
+        color: #f0a500;
+      }
+      
+      /* Navbar Links */
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+      
+      .nav-links li {
+        position: relative;
+      }
+      
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 0;
+        transition: color 0.3s ease;
+      }
+      
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #f0a500;
+        transition: width 0.3s ease;
+      }
+      
+      .nav-links a:hover {
+        color: #f0a500;
+      }
+      
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      
+      /* Navbar Button */
+      .nav-button {
+        padding: 8px 16px;
+        background-color: #f0a500;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      
+      .nav-button:hover {
+        background-color: #e59400;
+        transform: scale(1.05);
+      }
+      
+      /* Portfolio Page Styles */
+      .portfolio-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 150px auto;
+        padding: 40px;
+        background-color: #1a1a1a;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        animation: fadeInUp 1.5s ease-out;
+      }
+      
+      .portfolio-content {
+        text-align: center;
+      }
+      
+      .portfolio-content h1 {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #f0a500;
+      }
+      
+      .portfolio-content p {
+        font-size: 20px;
+        line-height: 1.6;
+        margin: 20px 0;
+        color: #e0e0e0;
+        transition: color 0.3s ease;
+      }
+      
+      .portfolio-projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+      }
+      
+      .project {
+        background-color: #333;
+        padding: 20px;
+        border-radius: 8px;
+        width: calc(33.333% - 40px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+      
+      .project img {
+        background-image: url(project1.png);
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      
+      .project h2 {
+        font-size: 24px;
+        margin: 10px 0;
+      }
+      
+      .project p {
+        font-size: 16px;
+        color: #e0e0e0;
+      }
+      
+      .project:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="#" class="nav-logo">FLASK</a>
+      </div>
+      <div class="nav-center">
+        <ul class="nav-links">
+          <li>
+            <a href="/">Home Page</a>
+          </li>
+          <li>
+            <a href="/about">About Us</a>
+          </li>
+          <li>
+            <a href="/portfolio">Portfolio Showcase</a>
+          </li>
+          <li>
+            <a href="/contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <button class="nav-button">Get Started</button>
+      </div>
+    </nav>
+
+    <main class="portfolio-container">
+      <div class="portfolio-content">
+        <h1>Our Portfolio</h1>
+        <p>Welcome to our portfolio page. Here, you can explore some of the exceptional projects we've worked on. Each project showcases our expertise in web development, design, and innovation.</p>
+
+        <section class="portfolio-projects">
+          <article class="project">
+            <h2>Project 1</h2>
+            <p>A brief description of Project 1 goes here. It highlights the key features and technologies used.</p>
+          </article>
+          <article class="project">
+            <h2>Project 2</h2>
+            <p>A brief description of Project 2 goes here. It showcases the project's impact and outcomes.</p>
+          </article>
+          <article class="project">
+            <h2>Project 3</h2>
+            <p>A brief description of Project 3 goes here. It outlines the challenges faced and solutions implemented.</p>
+          </article>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

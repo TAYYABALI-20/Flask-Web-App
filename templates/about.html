@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Navbar with Container</title>
+    <!-- Link to CSS file -->
+    <style>
+      /* CSS Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+      }
+      
+      /* Body Styling */
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+        overflow-x: hidden;
+      }
+      
+      /* Navbar Styling */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: #333;
+        color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Logo */
+      .nav-logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      
+      .nav-logo:hover {
+        color: #f0a500;
+      }
+      
+      /* Navbar Links */
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+      
+      .nav-links li {
+        position: relative;
+      }
+      
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 0;
+        transition: color 0.3s ease;
+      }
+      
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #f0a500;
+        transition: width 0.3s ease;
+      }
+      
+      .nav-links a:hover {
+        color: #f0a500;
+      }
+      
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      
+      /* Navbar Button */
+      .nav-button {
+        padding: 8px 16px;
+        background-color: #f0a500;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      
+      .nav-button:hover {
+        background-color: #e59400;
+        transform: scale(1.05);
+      }
+      
+      /* Content Container Styling */
+      .content-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 80px auto;
+        padding: 40px;
+        background-color: #1a1a1a;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        text-align: center;
+        animation: fadeInUp 1.5s ease-out;
+      }
+      
+      /* Content Container Heading */
+      .content-container h1 {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #f0a500;
+        transition: color 0.3s ease;
+      }
+      
+      .content-container h1:hover {
+        color: #e59400;
+      }
+      
+      /* Content Container Paragraph */
+      .content-container p {
+        font-size: 20px;
+        line-height: 1.6;
+        margin: 20px 0;
+        color: #e0e0e0;
+        transition: color 0.3s ease;
+      }
+      
+      .content-container p:hover {
+        color: #c0c0c0;
+      }
+      
+      /* Call to Action Button */
+      .cta-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #f0a500;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      
+      .cta-button:hover {
+        background-color: #e59400;
+        transform: scale(1.1);
+      }
+      
+      /* Fade-in Animation */
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="#" class="nav-logo">FLASK</a>
+      </div>
+      <div class="nav-center">
+        <ul class="nav-links">
+          <li>
+            <a href="/">Home Page</a>
+          </li>
+          <li>
+            <a href="/about">About Us</a>
+          </li>
+          <li>
+            <a href="/portfolio">Portfolio Showcase</a>
+          </li>
+          <li>
+            <a href="/contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <button class="nav-button">Get Started</button>
+      </div>
+    </nav>
+
+    <!-- Content Container -->
+    <div class="content-container">
+      <h1>About Us</h1>
+      <p>Welcome to FLASK! We are passionate about creating exceptional web applications using Flask. Our team of skilled developers and designers work tirelessly to craft solutions that meet your needs and exceed your expectations.</p>
+      <p>With years of experience in the industry, we specialize in developing scalable and robust web applications that drive success for businesses. Our approach combines innovative technology with user-centric design, ensuring that every project we undertake delivers outstanding results.</p>
+      <p>At FLASK, we believe in the power of collaboration and communication. We work closely with our clients to understand their goals, provide tailored solutions, and support them throughout the development process. Your success is our success, and we are committed to helping you achieve your objectives.</p>
+      <p>Thank you for considering FLASK for your web development needs. We look forward to the opportunity to work with you and create something amazing together.</p>
+      <button class="cta-button">Get Started with Flask</button>
+    </div>
+  </body>
+</html>
